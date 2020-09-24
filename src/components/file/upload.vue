@@ -7,52 +7,52 @@
     <el-breadcrumb-item>文件上传</el-breadcrumb-item>
   </el-breadcrumb>
 
-  <!--文件上传表单-->
-  <el-form ref="form" :model="form" label-width="80px">
-    <el-form-item label="选择文件">
-      <el-upload limit="1" class="upload-demo" ref="upload" :http-request="uploadSectionFile" action="http://10.141.105.211:8080/file/add" :on-change="handleChange" :file-list="fileList" :auto-upload="false" accept=".doc, .docx, .pdf">
-        <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
-        <span slot="tip" class="el-upload__tip" style="margin-left:20px">【提示】只能上传.doc, .docx, .pdf文件</span>
-      </el-upload>
-    </el-form-item>
-    <el-form-item label="颁布文号">
-      <el-input v-model="form.num"></el-input>
-    </el-form-item>
-    <el-form-item label="发布时间">
-      <el-date-picker type="date" placeholder="选择日期" v-model="form.pub_time_s" value-format="yyyy-MM-dd" style="width: 100%;"></el-date-picker>
-    </el-form-item>
-    <el-form-item label="生效时间">
-      <el-date-picker type="date" placeholder="选择日期" v-model="form.effect_time_s" value-format="yyyy-MM-dd" style="width: 100%;"></el-date-picker>
-    </el-form-item>
-    <el-form-item label="文件类型">
-      <el-select v-model="form.file_type" placeholder="请选择文件类型">
-        <el-option v-for="(item, index) in select2" :key="index" :label="item" :value="item">
-        </el-option>
-      </el-select>
-    </el-form-item>
-    <el-form-item label="效力层级">
-      <el-select v-model="form.scope" placeholder="请选择效力层级">
-        <el-option v-for="(item, index) in select3" :key="index" :label="item" :value="item">
-        </el-option>
-      </el-select>
-    </el-form-item>
-    <el-form-item label="颁布单位">
-      <el-select v-model="form.dept" placeholder="请选择效力层级">
-        <el-option v-for="(item, index) in select4" :key="index" :label="item" :value="item">
-        </el-option>
-      </el-select>
-    </el-form-item>
-    <el-form-item label="业务类型">
-      <el-select v-model="form.service_type" placeholder="请选择效力层级">
-        <el-option v-for="(item, index) in select1" :key="index" :label="item" :value="item">
-        </el-option>
-      </el-select>
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="onSubmit()">立即创建</el-button>
-      <el-button>取消</el-button>
-    </el-form-item>
-  </el-form>
+      <!--文件上传表单-->
+      <el-form ref="form" :model="form" label-width="80px">
+        <el-form-item label="选择文件">
+          <el-upload limit="1" class="upload-demo" ref="upload" :http-request="uploadSectionFile" action="http://10.141.105.211:8080/file/add" :on-change="handleChange" :file-list="fileList" :auto-upload="false" accept=".doc, .docx, .pdf">
+            <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
+            <span slot="tip" class="el-upload__tip" style="margin-left:20px">【提示】只能上传.doc, .docx, .pdf文件</span>
+          </el-upload>
+        </el-form-item>
+        <el-form-item label="颁布文号">
+          <el-input v-model="form.num"></el-input>
+        </el-form-item>
+        <el-form-item label="发布时间">
+          <el-date-picker type="date" placeholder="选择日期" v-model="form.pub_time_s" value-format="yyyy-MM-dd" style="width: 100%;"></el-date-picker>
+        </el-form-item>
+        <el-form-item label="生效时间">
+          <el-date-picker type="date" placeholder="选择日期" v-model="form.effect_time_s" value-format="yyyy-MM-dd" style="width: 100%;"></el-date-picker>
+        </el-form-item>
+        <el-form-item label="文件类型">
+          <el-select v-model="form.file_type" placeholder="请选择文件类型">
+            <el-option v-for="(item, index) in select2" :key="index" :label="item" :value="item">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="效力层级">
+          <el-select v-model="form.scope" placeholder="请选择效力层级">
+            <el-option v-for="(item, index) in select3" :key="index" :label="item" :value="item">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="颁布单位">
+          <el-select v-model="form.dept" placeholder="请选择效力层级">
+            <el-option v-for="(item, index) in select4" :key="index" :label="item" :value="item">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="业务类型">
+          <el-select v-model="form.service_type" placeholder="请选择效力层级">
+            <el-option v-for="(item, index) in select1" :key="index" :label="item" :value="item">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="onSubmit()">立即创建</el-button>
+          <el-button>取消</el-button>
+        </el-form-item>
+      </el-form>
 
 </el-card>
 </template>
@@ -61,6 +61,7 @@
 export default {
   data() {
     return {
+      
       form: {
         file: '',
         name: '',
@@ -115,7 +116,6 @@ export default {
       }
     },
     onSubmit() {
-
       if (this.form.name === '') {
         this.$message({
           type: 'warning',
@@ -129,7 +129,7 @@ export default {
         })
       } else {
         this.$refs.upload.submit();
-        
+
       }
     },
     // 文件上传后将文件列表更新

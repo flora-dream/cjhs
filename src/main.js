@@ -8,6 +8,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/css/reset.css'
 import MyServerHttp from '@/plugins/http.js'
 import globalVariable from '@/global_var.js'
+import XLSX from 'xlsx'
+
 
 Vue.prototype.GLOBAL = globalVariable
 
@@ -15,6 +17,7 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 Vue.use(MyServerHttp)
+Vue.use(XLSX)
 
 
 /* eslint-disable no-new */

@@ -39,6 +39,7 @@
             <span>文件管理</span>
           </template>
           <el-menu-item index="fileup">文件上传</el-menu-item>
+          <el-menu-item index="file_mul_up">多文件上传</el-menu-item>     
           <el-menu-item index="file_management">文件查阅/删除</el-menu-item>
           <el-menu-item index="file_opts">操作记录</el-menu-item>
           <el-menu-item index="file_review" disabled>文件删除审核</el-menu-item>

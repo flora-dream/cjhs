@@ -5,6 +5,7 @@ import Login from '@/components/login/login.vue'
 import Home from '@/components/home/home.vue'
 import User from '@/components/account/user.vue'
 import FileUp from '@/components/file/upload.vue'
+import FileMulUp from '@/components/file/multiUpload.vue'
 import FileManagement from '@/components/file/fileManagement.vue'
 import FileReview from '@/components/file/fileReview.vue'
 import FileOpts from '@/components/file/fileOpts.vue'
@@ -41,6 +42,11 @@ export default  new Router({
           name: 'fileup',
           path: 'fileup',
           component: FileUp
+        },
+        {
+          name: 'file_mul_up',
+          path: 'file_mul_up',
+          component: FileMulUp
         },
         {
           name: 'file_management',

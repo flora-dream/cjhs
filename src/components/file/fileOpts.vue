@@ -117,7 +117,7 @@ export default {
         this.total = res.data.count
         console.log(res)
       } else {
-        const res = await this.$http.post('/criteria_query?page=' + this.page, formdata)
+        const res = await this.$http.post('/getOptNotes?page=' + this.page, formdata)
         this.posts_lst = res.data.optNoteList
       }
     },

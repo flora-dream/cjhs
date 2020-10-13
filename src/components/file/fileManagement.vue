@@ -250,7 +250,7 @@ export default {
         var that = this
         this.$http.get('/file/delete/' + val.id).then((response) => {
           if (response.status === 200)
-            that.getposts(1)
+            that.getposts(0)
         }).catch(function (error) {
           alert(error)
         })
@@ -282,7 +282,7 @@ export default {
         that.$message.success('删除成功!');
         this.multipleSelection = []
         if (response.status === 200)
-          that.getposts(1)
+          that.getposts(0)
       })
     },
 
